@@ -1,0 +1,20 @@
+Registro:
+  URL: /Registro
+  param: { module: listado, action: ip }
+    _file: paises/lista.php
+
+listado_ip:
+  URL_for(array('Ip' => ip): /src/Controller/listado_ip::index
+  param: { module: listado, action: ip }
+  controller: App\Controller\
+  requirements:
+   id: \d+
+   sf_method: [ get ]
+
+
+EditarIpController:
+  URL_for(array('Ip' => ip): /src/Controller/listado_ip::index
+  defaults:
+    _file: ip/EditarIpController.php
+  requirements:    # Permite definir restricciones para los parametros
+    id: +d       # Solo números :-)
